@@ -1,0 +1,102 @@
+멀티 데이터 검색/분석 플랫폼
+AI 로그 검색 & 분석 시스템
+영상/텍스트/로그 기반 검색 + Q&A 시스템
+
+[데이터 입력]
+- 텍스트
+- 로그
+
+↓
+[구조화]
+- chunk
+- 메타데이터
+
+↓
+[저장]
+- vector DB
+
+↓
+[기능]
+- 검색
+- 질문
+- 요약
+
+프론트: 검색 UI
+백엔드: API + DB
+데이터 구조 + RAG
+
+
+AI / 데이터
+임베딩: OpenAI / local embedding
+Vector DB: FAISS or Chroma
+파이프라인: LangChain
+
+백엔드
+FastAPI
+
+프론트
+React (or Streamlit)
+
+기타
+STT: Whisper
+파일 처리: Python
+
+project/
+│
+├── backend/
+│   ├── main.py
+│   ├── api/
+│   ├── rag/
+│   ├── models/
+│   └── utils/
+│
+├── frontend/
+│   ├── src/
+│   └── components/
+│
+├── data/
+│   ├── raw/
+│   ├── processed/
+│   └── vector_store/
+│
+└── README.md
+
+---
+
+핵심 코드 흐름
+
+파일 업로드
+→ 텍스트 추출
+→ chunk 분할
+→ embedding 생성
+→ vector DB 저장
+
+질문 입력
+→ 유사 chunk 검색
+→ LLM 답변 생성
+→ 결과 반환
+
+---
+
+역할 분배
+
+데이터 구조
+chunk / embedding / RAG
+
+백엔드 1명
+FastAPI
+파일 업로드 / 검색 API
+
+프론트 1명
+UI (검색창, 결과 표시)
+
+옵션)
+영상/STT 처리
+
+
+최종 목표:
+텍스트/PDF 업로드
+검색 (vector 기반)
+질문 → 답변
+
+RAG 기반 검색 시스템
